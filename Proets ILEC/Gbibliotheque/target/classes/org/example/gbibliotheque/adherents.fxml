@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.gbibliotheque.AdherentController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <VBox spacing="20" alignment="CENTER" prefWidth="600" style="-fx-background-color: #ECF0F1; -fx-padding: 20px; -fx-border-radius: 10px; -fx-border-color: #BDC3C7; -fx-border-width: 2;">
+        <Label text="Gestion des Adherents" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2C3E50; -fx-padding-bottom: 20px;"/>
+
+        <!-- Tableau des adhérents -->
+        <TableView fx:id="tableAdherents" prefHeight="200" style="-fx-background-color: white; -fx-border-radius: 5px; -fx-border-color: #BDC3C7; -fx-border-width: 1;">
+            <columns>
+                <TableColumn text="Nom" fx:id="colNom" prefWidth="150"/>
+                <TableColumn text="Email" fx:id="colEmail" prefWidth="200"/>
+                <TableColumn text="Téléphone" fx:id="colTelephone" prefWidth="100"/>
+            </columns>
+        </TableView>
+
+        <!-- Formulaire d'ajout/modification -->
+        <GridPane hgap="10" vgap="10" alignment="CENTER" style="-fx-background-color: white; -fx-border-radius: 5px; -fx-border-color: #BDC3C7; -fx-border-width: 1; -fx-padding: 15px;">
+            <Label text="Nom:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="nomField" promptText="Nom" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="emailField" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label text="Téléphone:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="telephoneField" promptText="Téléphone" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        </GridPane>
+
+        <!-- Boutons -->
+        <HBox spacing="20" alignment="CENTER" style="-fx-padding-top: 20px;">
+            <Button text="Ajouter" onAction="#ajouterAdherent" style="-fx-background-color: #27AE60; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px; -fx-border-radius: 5;"/>
+            <Button fx:id="btnModifier" text="Modifier" onAction="#modifierAdherent" style="-fx-background-color: #F39C12; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px; -fx-border-radius: 5;"/>
+            <Button fx:id="btnSupprimer" text="Supprimer" onAction="#supprimerAdherent" style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px; -fx-border-radius: 5;"/>
+        </HBox>
+    </VBox>
+
+</AnchorPane>

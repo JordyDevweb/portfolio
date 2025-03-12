@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.gbibliotheque.LivreController" >
+
+    <!-- Contexte général -->
+    <VBox spacing="20" alignment="TOP_CENTER" layoutX="20" layoutY="20" prefWidth="600" prefHeight="500" style="-fx-background-color: #f4f4f9; -fx-padding: 20;">
+
+        <!-- Titre principal -->
+        <Label text="Gestion des Livres" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;"/>
+
+        <!-- TableView pour afficher les livres -->
+        <TableView fx:id="tableLivres" prefWidth="550" prefHeight="200" style="-fx-border-color: #BDC3C7; -fx-border-radius: 5;">
+            <columns>
+                <TableColumn text="Titre" fx:id="colTitre" prefWidth="150" />
+                <TableColumn text="Auteur" fx:id="colAuteur" prefWidth="150" />
+                <TableColumn text="Genre" fx:id="colGenre" prefWidth="150" />
+                <TableColumn text="Année" fx:id="colAnnee" prefWidth="100" />
+            </columns>
+        </TableView>
+
+        <!-- Formulaire pour saisir les informations du livre -->
+        <VBox spacing="15" alignment="CENTER" prefWidth="550">
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label text="Titre :" style="-fx-font-size: 14px; -fx-text-fill: #34495E;"/>
+                <TextField fx:id="titreField" prefWidth="300" promptText="Entrez le titre" style="-fx-font-size: 14px; -fx-background-color: #ffffff; -fx-border-color: #BDC3C7; -fx-border-radius: 5;"/>
+            </HBox>
+
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label text="Auteur :" style="-fx-font-size: 14px; -fx-text-fill: #34495E;"/>
+                <TextField fx:id="auteurField" prefWidth="300" promptText="Entrez l'auteur" style="-fx-font-size: 14px; -fx-background-color: #ffffff; -fx-border-color: #BDC3C7; -fx-border-radius: 5;"/>
+            </HBox>
+
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label text="Genre :" style="-fx-font-size: 14px; -fx-text-fill: #34495E;"/>
+                <TextField fx:id="genreField" prefWidth="300" promptText="Entrez le genre" style="-fx-font-size: 14px; -fx-background-color: #ffffff; -fx-border-color: #BDC3C7; -fx-border-radius: 5;"/>
+            </HBox>
+
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label text="Année :" style="-fx-font-size: 14px; -fx-text-fill: #34495E;"/>
+                <TextField fx:id="anneeField" prefWidth="300" promptText="Entrez l'année" style="-fx-font-size: 14px; -fx-background-color: #ffffff; -fx-border-color: #BDC3C7; -fx-border-radius: 5;"/>
+            </HBox>
+        </VBox>
+
+        <!-- Section des boutons -->
+        <HBox spacing="15" alignment="CENTER" style="-fx-padding-top: 20;">
+            <Button text="Ajouter" fx:id="btnAjouter" onAction="#ajouterLivre" style="-fx-background-color: #27AE60; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px; -fx-border-radius: 5;"/>
+            <Button text="Modifier" fx:id="btnModifier" onAction="#modifierLivre" style="-fx-background-color: #F39C12; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px; -fx-border-radius: 5;"/>
+            <Button text="Supprimer" fx:id="btnSupprimer" onAction="#supprimerLivre" style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px; -fx-border-radius: 5;"/>
+        </HBox>
+
+    </VBox>
+
+</AnchorPane>
